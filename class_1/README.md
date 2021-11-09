@@ -112,9 +112,9 @@ fmt.Printf("%.2f %s = %.2f %s\n", valorOrigem, moedaOrigem, valorDestino, moedaD
 ~~~
 Por fim para executar o programa basta usar o exemplo:
 ````
-go run class_1/main.go dolar 10 24
+go run class_1/conversor_moeda.go dolar 10 24
 
 //Retorno
-10.00 dolar = 1.81 real
-24.00 dolar = 4.33 real
+10.00 dolar = 55.40 real
+24.00 dolar = 132.96 real
 ````

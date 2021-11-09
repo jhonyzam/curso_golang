@@ -40,9 +40,9 @@ func main() {
 		var valorDestino float64
 
 		if moedaOrigem == "real" {
-			valorDestino = valorOrigem * valorDolarPorReal
-		} else {
 			valorDestino = valorOrigem / valorDolarPorReal
+		} else {
+			valorDestino = valorOrigem * valorDolarPorReal
 		}
 
 		fmt.Printf("%.2f %s = %.2f %s\n", valorOrigem, moedaOrigem, valorDestino, moedaDestino)
