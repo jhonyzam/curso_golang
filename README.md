@@ -9,7 +9,7 @@ Os exemplos são baseados no livro: "**Programando em Go - Crie aplicações com
 
 ### Primeiro programa em go
 
-Após a intalação concluída, basta criar um arquivo `ola.go` e digitar:
+Após a instalação concluída, basta criar um arquivo `ola.go` e digitar:
 
 ~~~go
 package main
@@ -21,7 +21,7 @@ func main() {
 }
 ~~~
 
-Salve o arquivo vá até o diretori de instalação onde o arquivo foi criado e execute no console:
+Salve o arquivo vá até o diretório de instalação onde o arquivo foi criado e execute no console:
 ````
 go run ola.go
 ````
