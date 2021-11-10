@@ -85,7 +85,8 @@ for i, v := range valoresOrigem {
 Em seguida utilizamos a função `ParseFloat()` do pacote `strconv` para converter uma `string` em um número.
 Esta função recebe dois argumentos, o valor a ser convertido e a precisão do valor retornado (32 ou 64 bits). Retornando
 dois valores, o valor converto e um erro (que será `nil` em caso de convertido com sucesso). Caso haja um erro é feito 
-a validação se a variavel `err` é diferente de `nil`, caso seja é mostado uma mensagem no console para o usuário.
+a validação se a variavel `err` é diferente de `nil`, caso seja é mostado uma mensagem no console
+para o usuário.
 ~~~go
 valorOrigem, err := strconv.ParseFloat(v, 64)
 if err != nil {
@@ -110,7 +111,7 @@ Por fim é apresentado o valor convertido e sua unidade para o usuario. Ao utili
 ~~~go
 fmt.Printf("%.2f %s = %.2f %s\n", valorOrigem, moedaOrigem, valorDestino, moedaDestino)
 ~~~
-Por fim para executar o programa basta usar o exemplo:
+#### Execução
 ````
 go run class_1/conversor_moeda.go dolar 10 24
 

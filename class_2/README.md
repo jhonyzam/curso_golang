@@ -74,7 +74,8 @@ func quicksort(numeros []int) []int {
 }
 ~~~
 O primeiro passo é verificar se a lista possui mais de um número, caso não, retornar a própria lista. Isso 
-é muito importante, essa validação é chamado de "condição de parada", previne que a função seja executada eternamente. 
+é muito importante, essa validação é chamado de "condição de parada", previne que a função seja
+executada eternamente. 
 ~~~go
 if len(numeros) <= 1 {
     return numeros
@@ -98,7 +99,7 @@ um elemento ao final de um slice, ou seja, vamos criar um novo slice que não co
 Primeiro fatiamos o slice `n` do primeiro elemento até o `pivo` `n[:indicePivo]`, e segundo partindo imediatamente 
 posterior ao `pivo` até o último elemento disponível `[indicePivo+1:]`, este slice será adicionado ao slice-base.
 É importante notar o uso de reticências ao final do segundo argumento, este informa que todos os elementos do segundo slice 
-devem ser adicionados ao slice-base 
+devem ser adicionados ao slice-base .
 ~~~go
 n = append(n[:indicePivo], n[indicePivo+1:]...)
 ~~~
@@ -141,7 +142,7 @@ com a função `append()`.
 return append(append(quicksort(menores), pivo), quicksort(maiores)...)
 ~~~
 
-Execução do código:
+#### Execução
 ````
 go run class_2/quicksort.go 10 30 41 53 78 12 19 22
 
