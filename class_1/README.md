@@ -86,7 +86,7 @@ Em seguida utilizamos a função `ParseFloat()` do pacote `strconv` para convert
 Esta função recebe dois argumentos, o valor a ser convertido e a precisão do valor retornado (32 ou 64 bits). Retornando
 dois valores, o valor converto e um erro (que será `nil` em caso de convertido com sucesso). Caso haja um erro é feito 
 a validação se a variavel `err` é diferente de `nil`, caso seja é mostado uma mensagem no console
-para o usuário.
+para o usuário:
 ~~~go
 valorOrigem, err := strconv.ParseFloat(v, 64)
 if err != nil {
@@ -96,7 +96,7 @@ if err != nil {
 }
 ~~~    
 Com o valor convertido, é preciso apenas validar qual a moeda de origem
-para transformar para o valor da moeda de destino 
+para transformar para o valor da moeda de destino:
 ~~~go
 var valorDestino float64
 
@@ -107,7 +107,7 @@ if moedaOrigem == "real" {
 }
 ~~~
 Por fim é apresentado o valor convertido e sua unidade para o usuario. Ao utilizar `%2.f` a funcão 
-`Printf` reconhece como valor float e arredonda o valor para 2 casas decimais.
+`Printf` reconhece como valor float e arredonda o valor para 2 casas decimais:
 ~~~go
 fmt.Printf("%.2f %s = %.2f %s\n", valorOrigem, moedaOrigem, valorDestino, moedaDestino)
 ~~~

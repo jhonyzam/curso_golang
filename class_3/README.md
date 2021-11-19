@@ -7,7 +7,7 @@ um único valor.
 O exemplo a seguir utiliza `map` para contar a frequência de palavras com as mesmas iniciais.
 
 A função `main` apenas recebe palavras como já vimos anteriormente, e chama as funções `colherEstatisticas()`
-e `imprimir()`.
+e `imprimir()`:
 ~~~go
 func main() {
     palavras := os.Args[1:]
@@ -18,30 +18,30 @@ func main() {
 }
 ~~~
 Para armazenar os dados que queremos, vamos usar um `map[string]int`, a chave é do tipo `string` e o valor 
-do tipo `int`. Para cada item, a chave será a letra inicial e o valor será a quantidade de repetições.
+do tipo `int`. Para cada item, a chave será a letra inicial e o valor será a quantidade de repetições:
 ~~~go
 func colherEstatisticas(palavras []string) map[string]int
 ~~~
 Primeiro criamos o `map` que iŕa armazenar as estatísticas, para isso usamos a função `make()`, mesmo 
-princípio da inicialização de slices.
+princípio da inicialização de slices:
 ~~~go
 estatisticas := make(map[string]int)
 ~~~
 Em seguida, extraímos a primeira letra (`palavra[0]`) da lista de `palavaras`, convertendo ela para maiúscula 
-usando a função `ToUpper()` do pacote `strings`, assim evitamos distinção das letras.
+usando a função `ToUpper()` do pacote `strings`, assim evitamos distinção das letras:
 ~~~go
 inicial := strings.ToUpper(string(palavra[0]))
 ~~~
 Com a inicial em mãos, procuramos no mapa `estatisticas` uma entrada cuja chave seja igual a `inicial`.
 Para fazer isso, é semelhante ao acesso de vlores em um slice, porém utilizamos a chave do valor entre 
 colchetes. O resultado são dois valores, o primeiro o valor armazenado no `map`, e o segundo um `bool` indicando
-se o valor existe ou não no `map`.
+se o valor existe ou não no `map`:
 ~~~go
 contador, encontrado := estatisticas[inicial]
 ~~~
 Feito isso, basta verificar se valor foi encontrado, se sim adiconamos mais um ao `contador`, caso
 contrário será a primeira ocorrência da `inicial`. Finalizado a contagem ele efetua o retorno do
-mapa `estatisticas`.
+mapa `estatisticas`:
 ~~~go
 if encontrado {
     estatisticas[inicial] = contador + 1
@@ -52,7 +52,7 @@ if encontrado {
 return estatisticas
 ~~~
 A função `imprimir()`, recebe o `map` de estatísticas, intera todas as entradas, imprimindo os valores
-de cada inicial.
+de cada inicial:
 ~~~go
 func imprimir(estatisticas map[string]int) {
     fmt.Println("Contagem de palavras iniciadas em cada letra:")
@@ -89,7 +89,7 @@ agregado a essa struct seria `quantidadeDePortas()`.
 No nosso exemplo vamos ter a nossa struct `Pilha`, com um slice denominado `valores` que armazena 
 objetos do tipo `interface{}`. Este tipo permite com que seja armazenado qualquer tipo de dados 
 válido do Go. Outro ponto a ressaltar é que o slice `valores` está declarado com a inicial em minúsculo,
-dessa forma ele não é acessível em outro pacote diretamente.
+dessa forma ele não é acessível em outro pacote diretamente:
 ~~~go
 type Pilha struct {
     valores []interface{}
@@ -97,7 +97,7 @@ type Pilha struct {
 ~~~
 E como mencionamos é possível adicionar funções vinculadas a essa struct. Essas funções são muito semelhantes 
 ao que vimos até agora, a principal diferença é o objeto receptor `pilha` do tipo `Pilha`, que deve ser 
-especificado entre parênteses antes do nome da função. Assim essas funções podem acessar o slice `pilha.valores`. 
+especificado entre parênteses antes do nome da função. Assim essas funções podem acessar o slice `pilha.valores`: 
 ~~~go
 func (pilha Pilha) Tamanho() int {
     return len(pilha.valores)
@@ -117,7 +117,7 @@ da função `append()`. Por ser um ponteiro, o slice sempre vai manter os dados 
 o valor é passado como argumento.
 
 E o mesmo conceito serve para a função `Desempilhar()`, a diferença é que nessa função não possui passagem
-de argumento, o valor é sempre o ultimo registro do slice.
+de argumento, o valor é sempre o ultimo registro do slice:
 ~~~go
 func (pilha *Pilha) Empilhar(valor interface{}) {
     pilha.valores = append(pilha.valores, valor)
@@ -135,7 +135,7 @@ func (pilha *Pilha) Desempilhar() (interface{}, error) {
 ~~~
 Com as funçãos explicadas vamos para a implementação delas na função `main`.
 
-Primeiro, criamos um obejto a do tipo `Pilha{}`, e imprimimos o tamanho e a validação de vazia.
+Primeiro, criamos um obejto a do tipo `Pilha{}`, e imprimimos o tamanho e a validação de vazia:
 ~~~go
 pilha := Pilha{}
 
@@ -143,7 +143,7 @@ fmt.Println("Pilha criada com tamanho: ", pilha.Tamanho())
 fmt.Println("Vazia ", pilha.Vazia())
 ~~~
 Segungo, vamos adicionar valores na pilha, usando a função `Empilhar()`, e imprimimos seu novo
-tamanho.
+tamanho:
 ~~~go
 pilha.Empilhar("Go")
 pilha.Empilhar(2021)
@@ -155,7 +155,7 @@ fmt.Println("Tamanho atual ", pilha.Tamanho())
 Terceiro, usamos um `for` do tipo `bool`. Como já mencionado Go possui apenas o `for` como laço de 
 repetição, e neste caso ele executa enquanto o retorno de `pilha.Vazia()` for `false`. A cada repetição
 a função `pilha.Desempilhar()` remove um registro da fila, assim que a `pilha` estiver vazia o laço será
-completo.
+completo:
 ~~~go
 for !pilha.Vazia() {
     v, _ := pilha.Desempilhar()
@@ -164,7 +164,7 @@ for !pilha.Vazia() {
     fmt.Println("Vazia? ", pilha.Vazia())
 }
 ~~~
-Por fim, caso executar a função `pilha.Desempilhar()` sendo que já esteja vazia, imprimimos um erro.
+Por fim, caso executar a função `pilha.Desempilhar()` sendo que já esteja vazia, imprimimos um erro:
 ~~~go
 _, err := pilha.Desempilhar()
 if err != nil {

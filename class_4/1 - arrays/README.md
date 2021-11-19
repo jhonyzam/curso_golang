@@ -37,7 +37,7 @@ do código a seguir nos daria `3 5 6 2` como resultado:
 fmt.Println(len(a), len(numeros), len(primos), len(nomes))
 ~~~
 Existe também a possibilidade de criar arrays cujos valores são também arrays, ou arrays
-multidimencionais.
+multidimencionais:
 ~~~go
 var multiA [2][2]int
 multiA[0][0], multiA[0][1] = 3, 5
