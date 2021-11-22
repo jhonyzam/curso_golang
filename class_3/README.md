@@ -1,7 +1,7 @@
 # Mapas
 
 Um `map` é uma coleção de pares chave/valor sem ordem definida, onde a chave não se repete e armazena 
-um único valor.
+um único valor, na próxima aula vamos entrar mais no detalhe do `map`. 
 
 ### 1- Colher estatística
 O exemplo a seguir utiliza `map` para contar a frequência de palavras com as mesmas iniciais.
