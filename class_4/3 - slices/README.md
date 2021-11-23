@@ -1,4 +1,4 @@
-# Slices
+# 4.3 Slices
 Os slices são uma poderasa abstração criada em cima de arrays que possui uma série de facilidades
 amais. Diferente de um array, o slice possui tamanha variável e pode crescer indefinidamente.
 Para declarar um slice, utilizamos quase a mesma sintaxe da declaração de arrays, a diferença é 
@@ -41,7 +41,7 @@ ou no retorno de funções, estes são passados por referência e não por cópi
 as chamadas sejam muito mais eficientes, pois o tamanho da referência será sempre o mesmo,
 independente do tamanho do slice.
 
-### Fatiando slices
+### 4.3.1 Fatiando slices
 Para fatiar ou extrais uma parte de um slice ou de um array, utilizamos a seguinte forma:
 ~~~go
 novoSlice := slice[inicio : fim]
@@ -94,7 +94,7 @@ modificado, isto acontece para qualquer slice criado fatiando um outro slice. Is
 válido para um array, mas sempre que fatiar uma array o resultado é um slice, nunca outro
 array.
 
-### Inserindo valores
+### 4.3.2 Inserindo valores
 Todas as operações realizadas sobre slices são baseadas na função `append()`. Já vimos alguns
 exemplos de como usá-la.
 Para inserir um novo valor ao final de um slice, utilizamos `append()` em sua forma mais
@@ -138,7 +138,7 @@ Resultado:
 [11 12 13 14 15 16 17 18]
 ````
 
-### Removendo valores
+### 4.3.3 Removendo valores
 Para remover valores do começo de um slice não precisamos da função `append()`. Basta fatiar
 o slice ignorando os índices dos elementos que desejamos remover, e atribuir o novo slice
 à mesma variável:
@@ -177,7 +177,7 @@ Resultado:
 [10 20 50 60]
 ````
 
-### Copiando slices
+### 4.3.4 Copiando slices
 Até agora sempre que manipulamos slices, utilizamos a função `append()` para modificar
 o slice original. Porém muitas vezes precisamos manter o estado do slice original intacto
 e manipular uma cópia dele. Para isso usamos a função `copy()` com a seguinte assinatura:

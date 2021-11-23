@@ -1,4 +1,4 @@
-# Arrays
+# 4.1 Arrays
 Arrays em go são coleções indexadas de valores do mesmo tipo e de tamanho fixo e invariável. 
 O primeiro elemento do array possui indice `0`, e o último elemento é sempre `len(array) - 1`.
 Para declarar um array, podemos utilizar um das seguintes formas:

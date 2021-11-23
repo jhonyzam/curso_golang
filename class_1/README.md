@@ -1,6 +1,6 @@
-# If e Expressões logicas
+# 1- If e Expressões logicas
 
-### Conversor de moeda
+### 1.1 Conversor de moeda
 
 O primeiro exemplo é um simples conversor de moeda. Ele aceita como entrada um valor
 string inicial sendo real ou dolar e uma lista de valores, devolvendo uma lista de 

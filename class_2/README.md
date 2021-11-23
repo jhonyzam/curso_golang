@@ -1,6 +1,6 @@
-# Criando funções
+# 2- Criando funções
 
-### 1- Funções básicas
+### 2.1- Funções básicas
 O primeiro exemplo vamos entrar no mundo das `func`, as funções são fundamentais no Go. Podemos 
 definir funções como pequenas unidades de código que podem abstrair ações, retornar e/ou receber valores,
 auxiliando e organizando o código.
@@ -29,7 +29,7 @@ func main() {
     fmt.Println("A soma é: ", s)
 }
 ~~~
-### 2- Quicksort
+### 2.2- Quicksort
 Neste segundo exemplo, vamos implementar um algoritmo de ordenação.
 
 1. Eleger um elemento da lista como pivô e removê-lo

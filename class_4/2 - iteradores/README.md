@@ -1,4 +1,4 @@
-# Iteradores
+# 4.2 Iteradores
 Como já vimos a única estrutura de repetição em Go é o `for`. Em sua forma mais básica,
 criamos uma condição lógoca onde loop será executado enquando a condição for verdadeira, 
 semelhante à construção de um `while` em outras linguagens:

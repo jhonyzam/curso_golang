@@ -1,9 +1,9 @@
-# Mapas
+# 3- Mapas
 
 Um `map` é uma coleção de pares chave/valor sem ordem definida, onde a chave não se repete e armazena 
 um único valor, na próxima aula vamos entrar mais no detalhe do `map`. 
 
-### 1- Colher estatística
+### 3.1- Colher estatística
 O exemplo a seguir utiliza `map` para contar a frequência de palavras com as mesmas iniciais.
 
 A função `main` apenas recebe palavras como já vimos anteriormente, e chama as funções `colherEstatisticas()`
@@ -81,8 +81,9 @@ U = 1
 M = 1
 ````
 
-### 2- Pilhas com structs
-Podemos descrever structs como objetos estruturados. Estes objetos possuem seus atributos e seus métodos/funções.
+### 3.2- Pilhas com structs
+Podemos descrever structs como objetos estruturados, mais a frente estudaremos
+melhor as structs. Estes objetos possuem seus atributos e seus métodos/funções.
 Um exemplo seria uma struct com nome `carro`, um atributo ou field seria `portas`, e um método ou função,
 agregado a essa struct seria `quantidadeDePortas()`.
 

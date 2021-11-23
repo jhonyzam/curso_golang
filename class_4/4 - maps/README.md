@@ -1,4 +1,4 @@
-# Maps
+# 4.4 Maps
 Um `map`, ou mapa, é uma coleção de pares _chave-valor_ sem nenhuma ordem definida. É a implementação em Go
 de uma estrutura de dados também conhecida como _hashtable_, dicionário de dados ou array 
 associativo, entre outros nomes. As chaves em um mesmo mapa devem necessariamente ser do mesmo tipo, e que estas são 
@@ -30,11 +30,11 @@ capitais := map[string]string{
 
 fmt.Println(len(capitais))
 ~~~
-Resuultado:
+Resultado:
 ````
 3
 ````
-# Populando maps
+### 4.4.1- Populando maps
 Podemos popular um mapa utilizando literais no momento da declaração ou atribuindo valores
 individualmente após a declaração:
 ~~~go
@@ -84,7 +84,7 @@ Resultado:
 ````
 map[AM:{Amazonas 3807923 Manaus} GO:{Goiás 6434052 Goiânia} PB:{Paraíba 3914418 João Pessoa} PR:{Paraná 10997462 Curitiba} RN:{Rio Grande do Norte 3373960 Natal} SE:{Sergipe 2228489 Aracaju}]
 ````
-# Lookup: recuperando valores
+### 4.4.2- Lookup: recuperando valores
 A operação de recuperação de um valor em um mapa é conhecida como _lookup_ é muito similar ao índice
 específico em um slice, basta especificara chave entre colchetes:
 ~~~go
@@ -110,7 +110,7 @@ if encontrado {
 O segundo valor retornado pela operação de lookup é um `bool` que receberá o valor `true`
 caso a chave esteja presente no map, ou `false` caso contrário.
 
-# Atualizando valores
+### 4.4.3- Atualizando valores
 Para atualizar valores existentes em um mapa, utilizamos a mesma sintaxe da inserção de
 um novo valor, isso por que as chaves são únicas então o valor é atualizado:
 ~~~go
@@ -128,13 +128,13 @@ Resultado:
 ````
 31
 ````
-# Removendo valores
+### 4.4.4- Removendo valores
 Podemos remover valores presentes em um mapa utilizando a função `delete()`, por exemplo se
 quisermos remover o estado do Amazonas do mapa de estados utilizado anteriormente:
 ~~~go
 delete(estados, "AM")
 ~~~
-# Iterando sobre maps
+### 4.4.5- Iterando sobre maps
 Podemos utilizar o operador `range` para iterar sobre todas as entradas de um mapa, o 
 exemplo abaixo usa o mapa de estados utilizado anteriormente:
 ~~~go
