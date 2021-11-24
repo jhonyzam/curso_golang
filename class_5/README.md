@@ -174,11 +174,11 @@ desenvolvendo um programa para extrair estatísticas de um arquivo de texto, pod
 forma:
 ~~~go
 type Arquivo struct {
-nome        string
-tamanho     float64
-caracteres  int
-palavras    int
-linhas      int
+    nome        string
+    tamanho     float64
+    caracteres  int
+    palavras    int
+    linhas      int
 }
 ~~~
 Com a struct definida, podemos criar uma instância especificando o valor dos campos na ordem em que eles foram definidos
