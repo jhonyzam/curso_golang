@@ -116,10 +116,11 @@ Criamos um tipo chamado `ListaGenerica` baseado em um slice que armazena valores
 
 ~~~go
 func (lista *ListaGenerica) RemoverIndice(indice int) interface{} {
-l := *lista
-removido := l[indice]
-*lista = append(l[0:indice], l[indice+1:]...)
-return removido
+    l := *lista
+    removido := l[indice]
+    *lista = append(l[0:indice], l[indice+1:]...)
+    
+    return removido
 }
 ~~~
 
@@ -130,7 +131,7 @@ chamarmos o `RemoveIndice()` passando
 
 ~~~go
 func (lista *ListaGenerica) RemoverInicio() interface{} {
-return lista.RemoverIndice(0)
+    return lista.RemoverIndice(0)
 }
 ~~~
 
