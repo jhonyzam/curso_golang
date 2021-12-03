@@ -17,7 +17,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Olá, mundo")
+    fmt.Println("Olá, mundo")
 }
 ~~~
 
@@ -27,6 +27,6 @@ go run ola.go
 ````
 
 ### The Go Playground
-Caso preferir não baixar o go, pode usar o playground para executar e se divertir
+Caso preferir não baixar o go, pode usar o playground para executar e se divertir:
 
 * https://play.golang.org/p/LaiIWrR2qWu
