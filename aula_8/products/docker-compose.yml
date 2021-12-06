@@ -27,6 +27,6 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./internal/infrastructure/storage/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ./test/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     networks:
       - products-network
