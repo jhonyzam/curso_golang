@@ -1,7 +1,6 @@
 package product
 
 import (
-	"context"
 	"github.com/jhonyzam/curso_golang/aula_8/products/domain"
 )
 
@@ -11,14 +10,12 @@ type ServiceMock struct {
 	UpdateInvokedCount      int
 	DeleteInvokedCount      int
 	IsValidInvokedCount     int
-	IsValidCNPJInvokedCount int
 
 	CreateFn      func(product *domain.Product) (*domain.Product, error)
 	GetFn         func(productID int) (*domain.Product, error)
 	UpdateFn      func(product *domain.Product) error
 	DeleteFn      func(productID int) error
 	IsValidFn     func(product *domain.Product) bool
-	IsValidCNPJFn func(ctx context.Context, CNPJ string) bool
 }
 
 func (sm *ServiceMock) Create(product *domain.Product) (*domain.Product, error) {
@@ -44,11 +41,6 @@ func (sm *ServiceMock) Delete(productID int) error {
 func (sm *ServiceMock) IsValid(product *domain.Product) bool {
 	sm.IsValidInvokedCount++
 	return sm.IsValidFn(product)
-}
-
-func (sm *ServiceMock) IsValidCNPJ(ctx context.Context, CNPJ string) bool {
-	sm.IsValidCNPJInvokedCount++
-	return sm.IsValidCNPJFn(ctx, CNPJ)
 }
 
 type StorageMock struct {

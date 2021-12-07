@@ -2,7 +2,6 @@ package http_test
 
 import (
 	"bytes"
-	"context"
 	"errors"
 	"fmt"
 	"github.com/jhonyzam/curso_golang/aula_8/products/domain"
@@ -29,9 +28,6 @@ func TestController(t *testing.T) {
 			IsValidFn: func(product *domain.Product) bool {
 				return product.Name != "" && product.Price > 0
 			},
-			IsValidCNPJFn: func(ctx context.Context, productCnpj string) bool {
-				return true
-			},
 			CreateFn: func(product *domain.Product) (*domain.Product, error) {
 				product.ID = 102
 				return product, nil
@@ -42,7 +38,7 @@ func TestController(t *testing.T) {
 
 		response := httptest.NewRecorder()
 		endpoint := "/v1/products"
-		body := []byte(`{"name": "Iso Whey 930g", "price": 29.90, "cnpj": "05337875000105"}`)
+		body := []byte(`{"name": "Iso Whey 930g", "price": 29.90}`)
 
 		req, _ := http.NewRequest("POST", endpoint, bytes.NewReader(body))
 
@@ -54,7 +50,7 @@ func TestController(t *testing.T) {
 		assert.NoError(t, err)
 		assert.NotEmpty(t, body)
 
-		expectedBody := []byte(`{"productId": 102, "name": "Iso Whey 930g", "price": 29.90, "cnpj": "05337875000105"}`)
+		expectedBody := []byte(`{"productId": 102, "name": "Iso Whey 930g", "price": 29.90}`)
 		assert.JSONEq(t, string(expectedBody), string(body))
 		assert.Equal(t, 1, productServiceMock.IsValidInvokedCount)
 	})
@@ -70,7 +66,7 @@ func TestController(t *testing.T) {
 
 		response := httptest.NewRecorder()
 		endpoint := "/v1/products"
-		body := []byte(`{"name": "Iso Whey 930g", "price": -10.0, "cnpj": "05337875000105"}`)
+		body := []byte(`{"name": "Iso Whey 930g", "price": -10.0}`)
 
 		req, _ := http.NewRequest("POST", endpoint, bytes.NewReader(body))
 

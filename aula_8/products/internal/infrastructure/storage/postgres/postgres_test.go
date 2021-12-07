@@ -3,6 +3,8 @@ package postgres_test
 import (
 	"database/sql"
 	"fmt"
+	"github.com/jhonyzam/curso_golang/aula_8/products/internal/infrastructure/storage/postgres"
+	"github.com/stretchr/testify/assert"
 	"os"
 	"testing"
 )
@@ -24,17 +26,17 @@ func init() {
 }
 
 func TestNewConnection(t *testing.T) {
-	//db, err := postgres.NewConnection(os.Getenv("POSTGRES_URL"))
-	//assert.NoError(t, err)
-	//assert.NotNil(t, db)
-	//
-	//if err == nil {
-	//	defer db.Close()
-	//	rows, err := db.Query("select 1")
-	//	assert.Nil(t, err, "Connection failed. Check the environment variables.")
-	//	assert.NotNil(t, rows)
-	//	if rows != nil {docker
-	//		defer rows.Close()
-	//	}
-	//}
+	db, err := postgres.NewConnection(os.Getenv("POSTGRES_URL"))
+	assert.NoError(t, err)
+	assert.NotNil(t, db)
+
+	if err == nil {
+		defer db.Close()
+		rows, err := db.Query("select 1")
+		assert.Nil(t, err, "Connection failed. Check the environment variables.")
+		assert.NotNil(t, rows)
+		if rows != nil {
+			defer rows.Close()
+		}
+	}
 }

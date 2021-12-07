@@ -18,11 +18,6 @@ func (h *handler) postProduct(c *gin.Context) {
 		return
 	}
 
-	//if !h.productService.IsValidCNPJ(c, product.CNPJ) {
-	//	c.AbortWithStatus(http.StatusBadRequest)
-	//	return
-	//}
-
 	product, err := h.productService.Create(product)
 	if err != nil {
 		c.AbortWithStatus(http.StatusInternalServerError)

@@ -2,7 +2,6 @@ package domain
 
 type Product struct {
 	ID    int     `json:"productId,omitempty"`
-	CNPJ  string  `json:"cnpj,omitempty"`
 	Name  string  `json:"name,omitempty"`
 	Price float64 `json:"price,omitempty"`
 }

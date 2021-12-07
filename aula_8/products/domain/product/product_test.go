@@ -16,10 +16,6 @@ var fakeProduct = &domain.Product{
 	Price: 29.90,
 }
 
-var fakeCompany = &domain.Company{
-	CNPJ: "78079606000151",
-}
-
 func TestService_Create(t *testing.T) {
 	productInsert := *fakeProduct
 
