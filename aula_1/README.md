@@ -3,10 +3,10 @@
 ### 1.1 Conversor de moeda
 
 O primeiro exemplo é um simples conversor de moeda. Ele aceita como entrada um valor
-string inicial sendo real ou dolar e uma lista de valores, devolvendo uma lista de 
+string inicial sendo real ou dólar, e uma lista de valores, devolvendo uma lista de 
 valores convertidos.
 
-A primeira parte do codigo é onde adicionamos o package. O package em Go é simplesmente um 
+A primeira parte do código é onde adicionamos o package. O package em Go é simplesmente um 
 diretório (pasta) com um ou mais arquivos .go dentro dele. Packages Go fornecem isolamento e 
 organização de código semelhante a diretórios e organização de arquivos em um computador.
 Todo o código Go vive em um pacote e um pacote é o ponto de entrada para acessar o código Go.
@@ -23,9 +23,9 @@ Em seguida os `imports` das libs a serem utilizadas no código.
   outros formatos.
 ~~~go
 import (
-	"fmt"
-	"os"
-	"strconv"
+  "fmt"
+  "os"
+  "strconv"
 )
 ~~~
 A linha abaixo representa uma constante. Constante são valores reservados na memoria que não
@@ -37,7 +37,7 @@ Na sequência é feito a declaração da função main. Como o nome sugere é a 
 Ela não recebe nenhum parâmetro, nem retorna valores.
 ~~~go
 func main() {
-	// ...
+  // ...
 }
 ~~~
 O objeto `os.Args` possui uma lista de todos os argumentos passados para o programa. O primmeiro

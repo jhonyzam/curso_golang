@@ -51,26 +51,26 @@ Depois de converter a entrada do programa para uma lista de inteiros, a função
 passando a lista como argumento, e a lista resultante é impressa como resultado:
 ~~~go
 func main() {
-	entrada := os.Args[1:]
-	numeros := make([]int, len(entrada))
-
-	for i, n := range entrada {
-
-		numero, err := strconv.Atoi(n)
-		if err != nil {
-			fmt.Printf("%s não é um número válido", n)
-			os.Exit(1)
-		}
-		numeros[i] = numero
-	}
-
-	fmt.Println(quicksort(numeros))
+    entrada := os.Args[1:]
+    numeros := make([]int, len(entrada))
+    
+    for i, n := range entrada {
+    
+        numero, err := strconv.Atoi(n)
+        if err != nil {
+            fmt.Printf("%s não é um número válido", n)
+            os.Exit(1)
+        }
+        numeros[i] = numero
+    }
+    
+    fmt.Println(quicksort(numeros))
 }
 ~~~
 A função `quicksort()` é responsavel por implementar o algoritmo de ordenação:
 ~~~go
 func quicksort(numeros []int) []int {
-	// ...
+    // ...
 }
 ~~~
 O primeiro passo é verificar se a lista possui mais de um número, caso não, retornar a própria lista. Isso 
