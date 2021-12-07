@@ -9,7 +9,7 @@ criar, ler, editar e deletar produtos.
 Até agora, todos os exemplos definiam um único pacote `main`. Projetos maiores e mais
 complexos, porém, precisam de pacotes adicionais para organizar melhor o código.
 
-Todo projeto em Go segue uma convensão semelhante. A estrutura de diretórios e pacotes
+Todo projeto em Go segue uma convenção semelhante. A estrutura de diretórios e pacotes
 é definida de acordo com o caminho do repositório onde o código reside. Por exemplo projetos
 hospedados no GitHub incluem `github.com/usuario/projeto/nome-do-pacote` no caminho
 completo dos pacotes.
@@ -42,13 +42,13 @@ no nosso caso as regras para manipular o produto.
 * `internal/`
   * `infrastruct/`
       * `server/`: Destinado a estrutura do servidor, é onde vamos montar nossos endpoints.
-      * `storage/`: Destinado ao banco de dados, caso houvesse mais de um database, adicionariamos outra pasta além da `postgres`.
+      * `storage/`: Destinado ao banco de dados, caso houvesse mais de um database, adicionaríamos outra pasta além da `postgres`.
 
 * `pkg/` Usado para manter pacotes reutilizáveis, no nosso caso apenas o `env` e `http_client`.
 
 ### 8.2- Tour pelo código
 
-Como sempre, vamos iniciar pelo `main.go`. O código possui a mesma caracteristica do
+Como sempre, vamos iniciar pelo `main.go`. O código possui a mesma característica do
 que foi apresentado no curso, com a diferença de ser pacotes diferentes.
 
 ~~~go
@@ -57,7 +57,7 @@ log.Printf("Products API starting - version: %s; date: %s\n", version, date)
 env.CheckRequired(envPostgresURL)
 ~~~ 
 A função main inicia imprimindo um log de inicio da API, usamos o pacote `log` padrão 
-do Go. Na sequencia testatamos as variáveis de ambiente obrigatórias, no nosso caso a
+do Go. Na sequencia testamos as variáveis de ambiente obrigatórias, no nosso caso a
 `envPostgresURL`. Isso serve para garantir que a api não irá subir em caso do dado não estar
 preenchido.
 ~~~go
@@ -69,7 +69,7 @@ if err != nil {
 }
 ~~~
 Na sequência criamos a conexão com o banco de dados, retornando a variável `db` para ser
-usada em outro serviço, e `err` que é validada logo após execução, garantindo que \
+usada em outro serviço, e `err` que é validada logo após execução, garantindo que 
 não há nenhum erro.
 
 Com a conexão pronta chamamos nosso primeiro serviço, o `productStorage`. Este é um serviço
@@ -88,7 +88,7 @@ type ProductStorage interface {
 }
 ~~~
 Estas funções estão implementadas dentro de `internal/infrastructure/storafe/postgres/product.go`
-Todas utilizam do pacote `*sql.DB`, ou seja da variavel `db` passada na criação do 
+Todas utilizam do pacote `*sql.DB`, ou seja da variável `db` passada na criação do 
 `NewProductStorage(db)`.
 
 Seguindo com o nosso main, o próximo serviço criado é o:
