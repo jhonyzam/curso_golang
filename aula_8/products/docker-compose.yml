@@ -1,0 +1,32 @@
+version: '3.5'
+networks:
+  products-network:
+    name: "products-network"
+services:
+  app:
+    container_name: api_products
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: build
+    environment:
+      POSTGRES_URL: "postgres://postgres:admin@db_products:5432/products?sslmode=disable"
+    ports:
+      - "8080:8080"
+    links:
+      - db
+    networks:
+      - products-network
+  db:
+    image: postgres:12-alpine
+    container_name: db_products
+    environment:
+      POSTGRES_DB: products
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - 5432:5432
+    volumes:
+      - ./test/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    networks:
+      - products-network
