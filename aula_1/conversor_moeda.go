@@ -25,7 +25,7 @@ func main() {
 	} else if moedaOrigem == "dolar" {
 		moedaDestino = "real"
 	} else {
-		fmt.Printf("%s não é uma moeda conhecida!", moedaDestino)
+		fmt.Printf("%s não é uma moeda conhecida! Escolha entre: real, dolar.\n", moedaOrigem)
 		os.Exit(1)
 	}
 

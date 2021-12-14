@@ -62,14 +62,14 @@ ser alterados durante o tempo de execução do programa.
 ~~~go
 var moedaDestino string
 ~~~
-É necessário verificar qual o valor de origem, se for real o destino será dólar e vice e versa.
+É necessário verificar qual o valor de origem, se for real o destino será dólar e vice e versa. Se for diferente, informamos. Para entender melhor o `fmt.Printf()` e seus atributos %, só acessar a [documentação oficial](https://pkg.go.dev/fmt#hdr-Printing).
 ~~~go
 if moedaOrigem == "real" {
     moedaDestino = "dolar"
 } else if moedaOrigem == "dolar" {
     moedaDestino = "real"
 } else {
-    fmt.Printf("%s não é uma moeda conhecida!", moedaDestino)
+    fmt.Printf("%s não é uma moeda conhecida! Escolha entre: real, dolar.\n", moedaOrigem)
     os.Exit(1)
 }
 ~~~
@@ -101,9 +101,9 @@ para transformar para o valor da moeda de destino:
 var valorDestino float64
 
 if moedaOrigem == "real" {
-    valorDestino = valorOrigem * valorDolarPorReal
-} else {
     valorDestino = valorOrigem / valorDolarPorReal
+} else {
+    valorDestino = valorOrigem * valorDolarPorReal
 }
 ~~~
 Por fim é apresentado o valor convertido e sua unidade para o usuario. Ao utilizar `%2.f` a funcão 
